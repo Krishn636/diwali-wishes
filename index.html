@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Diwali 2024</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #1a1a1a;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: #FFD700;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Main greeting text */
+        h1 {
+            font-size: 4em;
+            margin: 0;
+            color: #FFD700;
+            animation: glow 1.5s infinite alternate;
+            letter-spacing: 8px;
+            text-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500, 0 0 30px #FF6347;
+            z-index: 1;
+        }
+
+        /* Quote text */
+        .quote {
+            font-size: 1.5em;
+            margin-top: 20px;
+            max-width: 80%;
+            color: #FFA500;
+            font-style: italic;
+        }
+
+        /* Diya icon */
+        .diya-container {
+            position: relative;
+            margin-top: 20px;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FF6347;
+        }
+
+        /* Image of Diya */
+        .diya-image {
+            width: 100px; /* Adjust width as needed */
+            height: auto; /* Maintain aspect ratio */
+            animation: flicker 0.4s infinite alternate; /* Flickering effect */
+        }
+
+        /* Corner text */
+        .corner-text {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 1em;
+            color: #FFD700;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        /* Keyframes for glow effect */
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFA500; }
+            100% { text-shadow: 0 0 20px #FFD700, 0 0 40px #FFA500, 0 0 60px #FF6347; }
+        }
+
+        /* Flame flicker animation */
+        @keyframes flicker {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Fireworks animation */
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #FFD700, #FF6347);
+            opacity: 0;
+            animation: explode 1s infinite;
+        }
+
+        /* Fireworks explosion animation */
+        @keyframes explode {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-100px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+        }
+
+        /* Twinkling sparkle effect */
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #FFD700;
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkle-animation 2s infinite;
+        }
+
+        /* Sparkle animation */
+        @keyframes sparkle-animation {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Happy Diwali 2024</h1>
+    <div class="quote">"May the Diwali lights brighten your path with happiness, prosperity, and peace. Wishing you a sparkling Diwali 2024!"</div>
+
+    <!-- Diya icon with flame effect -->
+    <div class="diya-container">
+        <!-- Diya image -->
+        <img src=https://png.pngtree.com/png-clipart/20230213/ourmid/pngtree-colorful-diwali-diya-concept-png-image_6596176.png  class="diya-image" alt="Diya Lamp" />
+    </div>
+
+    <!-- Corner text -->
+    <div class="corner-text">Made by Krishna</div>
+
+    <!-- Fireworks effect -->
+    <script>
+        // Function to create fireworks
+        function createFirework() {
+            const firework = document.createElement("div");
+            firework.classList.add("firework");
+            document.body.appendChild(firework);
+
+            // Random position for fireworks
+            firework.style.left = Math.random() * 100 + "vw";
+            firework.style.top = Math.random() * 100 + "vh";
+            firework.style.animationDuration = (Math.random() * 1 + 0.5) + "s"; // Random duration
+
+            // Remove firework after animation
+            firework.addEventListener("animationend", () => {
+                firework.remove();
+            });
+        }
+
+        // Create multiple fireworks at intervals
+        setInterval(createFirework, 500);
+        
+        // Function to create sparkles
+        function createSparkle() {
+            const sparkle = document.createElement("div");
+            sparkle.classList.add("sparkle");
+            document.body.appendChild(sparkle);
+
+            // Random position for sparkles
+            sparkle.style.left = Math.random() * 100 + "vw";
+            sparkle.style.top = Math.random() * 100 + "vh";
+            sparkle.style.animationDuration = Math.random() * 2 + 1 + "s";
+
+            // Remove sparkle after animation
+            sparkle.addEventListener("animationend", () => {
+                sparkle.remove();
+            });
+        }
+
+        // Create multiple sparkles at intervals
+        setInterval(createSparkle, 300);
+    </script>
+</body>
+</html>
